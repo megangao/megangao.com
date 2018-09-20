@@ -1,8 +1,8 @@
 # megangao.com
-souce code for personal website
+Souce code for personal website
 ## Site Information
-* static
-* no frameworks
+* Static
+* No frameworks
 * HTML and SASS
 ## Planned Changes
 - [ ] JQuery
