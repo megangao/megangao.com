@@ -1,0 +1,279 @@
+$bg-color: #F52600;
+$font-color: white;
+//NORMALIZE
+html {
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    overflow: hidden;
+}
+body { 
+    margin: 0;
+    font: 16px/1 sans-serif;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-font-smoothing: antialiased;
+    overflow: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+p,
+blockquote,
+figure,
+ol,
+ul {
+    margin: 0;
+    padding: 0;
+}
+main,
+li {
+    display: block;
+}
+h1,
+h2,
+h3,
+h4 {
+    font-size: inherit;
+}
+a,
+button {
+    color: inherit;
+    transition: 0.3s;
+}
+a {
+    text-decoration: none;
+}
+button {
+    overflow: visible;
+    border: 0;
+    font: inherit;
+    -webkit-font-smoothing: inherit;
+    letter-spacing: inherit;
+    background: none;
+    cursor: pointer;
+}
+::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+}
+:focus {
+    outline: 0;
+}
+img {
+    max-width: 100%;
+    height: auto;
+    border: 0;
+}
+//INDEX
+html, body{
+    background-color: $bg-color;
+    color: $font-color;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: normal;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    backface-visibility: hidden;
+}
+body{
+    background-color: transparent;
+    overflow: hidden; 
+}
+nav{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    text-align: center;
+    align-items: center;
+    margin-top: 1em;
+}
+h1, h2, h3{
+    width: 100%;
+    font-family: "UnifrakturMaguntia", serif;
+    font-size: 5.47em;
+    line-height: 0.95em;
+    font-weight: normal;
+    text-align: center;
+    text-shadow: -0.04em 1.2px black;
+    margin: 0 auto;
+    padding: 0;
+}
+p{
+    margin: 0;
+    padding: 0;
+}
+.button, .button:active{
+    color: $font-color; 
+    text-decoration: none;
+    text-transform: lowercase;
+    font-size: 1.2em;
+    padding: 7px 10px;
+    border-style: none;
+}
+.button:hover{
+    color: invert($font-color);
+}
+.button.selected:before, .button.selected:after{
+	content: '';
+    position: absolute;	
+    width: 100%;
+    top: 1.9em;
+	height: 0.4em;	
+    z-index: -1;
+    background: $bg-color;
+    outline: 0;
+    border: none;
+    border-style: none;
+}
+.button.selected:before{
+    background: invert($font-color);
+    border-style: none;
+}
+#description, #description .circle{
+    position: absolute;
+    top: 52.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.circle{
+    border: 3px solid white;  
+    border-radius: 50%;
+    height: 20rem;
+    width: 20rem;
+    z-index: -50;
+}
+#description .circle{
+    top: 43%;
+}
+//ABOUT
+#about{
+    top: 50.5%;
+    left: 3%;
+    transform: translateY(-50%);
+    position: absolute;
+    line-height:0.5em;
+    margin: 0 20px;
+    padding: 0;
+}
+#about li{
+    list-style: none;
+}
+#about h3{
+    font-size: 3.6em;
+    text-align: left;
+}
+#about p{
+    margin: 0.7em 0px 1.2em;
+}
+#about-circles .left, #about-circles .right{
+    height: 15rem;
+    width: 15rem;
+    position: absolute;
+    overflow: hidden; 
+}
+#about-circles .left{
+    bottom: -125px;
+    left: -60px;
+}
+#about-circles .right{
+    top: 78px;
+    right: -108px;
+}
+//CONTACT
+#contact{
+    display: grid;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+#contact h2{
+    font-size: 4em;
+    text-align:left;
+}
+#contact p{
+    padding-top: 8px;
+}
+#contact a, #contact a:active{
+    color: $font-color;
+    text-decoration: none;
+}
+#contact a:hover{
+    text-decoration: underline;
+}
+.social{
+    position: absolute;
+    bottom: 0;
+    right: 15px;
+}
+.social #instagram{
+    max-width: 58px;
+    margin: 0;
+    padding: 0;
+}
+//RESPONSIVE
+@media only screen and (min-width: 580px){
+    h1{
+        font-size: 12.2vw;
+    }  
+    #description{
+        white-space: nowrap;
+    }
+    nav{
+        display: absolute;
+        float: right;
+        margin-top: 1em;
+        margin-right: 1.25vw;
+    }
+    .button, .button:active{
+        padding-right: 30px;
+    }
+    #about{
+        top: 53%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #about h3{
+        font-size: 9vw;
+    }
+    #about p{
+        font-size: 1.1em;
+    }
+}
+@media only screen and (min-width: 580px) and (orientation : landscape){
+    #about h3{
+        font-size: 4vw;
+    }
+}
+@media only screen and (min-width: 880px){
+    h1{
+        font-size: 10.5vw;
+    }  
+    #about h3{
+        font-size: 7.1vw;
+    }
+    #about-circles .left, #about-circles .right{
+        height: 26rem;
+        width: 26rem;
+        position: absolute;
+        top: 52%;
+        transform: translateY(-50%);
+    }
+    #about-circles .left{
+        left: -160px;
+    }
+    #about-circles .right{
+        right: -160px;
+    }
+    #contact h2{
+        font-size: 8.5vw;
+    }
+    #contact a, #contact a:active{
+        font-size: 1.7vw;
+    }
+    .social #instagram{
+        max-width: 64px;
+    }
+}
